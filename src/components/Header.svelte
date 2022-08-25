@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { link } from 'svelte-spa-router'
   export let title
 </script>
 
@@ -17,7 +18,7 @@
       </div>
       <div class="navbar-center">
         <a 
-          href="/"
+          href={`/${title}`}
           class="btn btn-ghost normal-case text-xl"
         >
           {title}
@@ -60,8 +61,8 @@
   <div class="drawer-side">
     <label for="drawer_bibi" class="drawer-overlay"></label> 
     <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
-      <li><a href="/">Home</a></li>
-      <li><a href="/user">MyPage</a></li>
+      <li><a href={`/`} use:link>Home</a></li>
+      <li><a href={`/user`} use:link>MyPage</a></li>
     </ul>
     
   </div>
